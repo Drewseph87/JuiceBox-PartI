@@ -8,6 +8,7 @@ const {
   updatePost,
   getAllPosts,
   getUserById,
+  getAllTags,
 } = require("./index.js");
 
 // this function should call a query which drops all tables from our database
@@ -231,6 +232,10 @@ async function testDB() {
     console.log("Calling getPostsByTagName with #happy");
     const postsWithHappy = await getPostsByTagName("#happy");
     console.log("Result7:", postsWithHappy);
+
+    console.log("Calling getAllPosts");
+    const tags = await getAllTags();
+    console.log("Result8:", tags);
 
     // for now, logging is a fine way to see what's up
     console.log("Finished database tests!");
